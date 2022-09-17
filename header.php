@@ -11,7 +11,7 @@
       <?php bloginfo( 'name' ); ?>
     </title>
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <!-- <link href="css/carousel.css" rel="stylesheet"> -->
@@ -45,10 +45,11 @@
               <img id="logo-top-left" class="hidden-xs" src="<?php echo get_stylesheet_directory_uri(); ?>/images/COC-logo-diamond-red.png" alt="<?php echo get_bloginfo('name')?>" />
             </a>
           </div>
-          <div class="col-lg-6 col-lg-offset-4 col-sm-8 col-md-6 col-md-offset-2 md-mrg-top hidden-xs" id="no-pad">
+          <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-md-8 md-mrg-top hidden-xs" id="no-pad">
             <ul class="nav nav-justified" id="top-nav">
               <li><a href="<?php echo get_permalink(111); ?>">About</a></li>
               <li><a href="<?php echo get_permalink(113); ?>">Contact</a></li>
+              <!-- <li><a href="http://jn2020.cascadeoc.org">2020 Jr. Nationals</a></li> -->
               <li><a href="http://register.wiol.org/">WIOL (School) Registration</a></li>
               <li><a href="http://register.cascadeoc.org/">General Registration</a></li>
             </ul>
@@ -81,7 +82,13 @@
             'container' =>  'false',
             );
           wp_nav_menu( $args );
-        ?>    
+        ?>
+	<ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://register.cascadeoc.org/">General Registration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://register.wiol.org/">WIOL (School) Registration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://cascadeoc.org/about/">About</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://cascadeoc.org/contact/">Contact</a></li>
+	</ul>    
     </div>  
   </nav>
 </div> <!-- end global navigation row -->

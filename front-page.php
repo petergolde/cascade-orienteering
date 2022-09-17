@@ -51,7 +51,7 @@
   <hr></hr>
   <div class="series text-center sm-mrg-top sm-mrg-bottom">
     <p>
-      <a href="<?php echo get_permalink(256); ?>" class="red">Winter League</a>
+      <a href="<?php echo get_permalink(256); ?>" class="red">Winter League</a> <!--16927-->
     </p>
     <p> | </p>
     <p>
@@ -83,16 +83,21 @@
         'orderby'    => 'meta_value_num',
         'order'      => 'ASC',
         'posts_per_page' => 7,
-        'meta_value'  => date('Ymd'),
-        'meta_compare'  => '>=',
-        'date_query'  => array(
-          array(
-              'key' => 'date',
-              'value' => date('Ymd'),
-              'compare' => '>=',
-              'type' => 'DATETIME'
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'event_date',
+                'value' => date('Ymd'),
+                'compare' => '>=',
+                'type' => 'DATETIME'
+            ),
+            array(
+                'key' => 'until_date',
+                'value' => date('Ymd'),
+                'compare' => '>=',
+                'type' => 'DATETIME'
             )
-          ),
+        )
         ) );
     ?>
 
@@ -300,7 +305,7 @@
 
     <div class="col-lg-4 col-md-4 col-sm-4 social social-widget">
       <?php if ( dynamic_sidebar( 'social-2' ) ); ?>
-      <a href="https://groups.yahoo.com/neo/groups/cascadeoc/info" target="_blank"><button class="social-button">Sign up</button></a>
+      <a href="https://groups.google.com/g/cascadeoc" target="_blank"><button class="social-button">Sign up</button></a>
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-4 social social-widget">
@@ -311,21 +316,31 @@
 <!--   </div>
 
   <div class="row"> -->
-    <div class="col-lg-4 col-md-4 col-sm-4 social social-widget">
+    <div class="col-lg-3 col-md-3 col-sm-3 social social-widget">
       <?php if ( dynamic_sidebar( 'social-4' ) ); ?>
       <a href="https://www.facebook.com/CascadeOC" target="_blank"><button class="social-button">Like us</button></a>
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-4 social social-widget">
+    <div class="col-lg-3 col-md-3 col-sm-3 social social-widget">
       <?php if ( dynamic_sidebar( 'social-5' ) ); ?>
       <a href="https://www.instagram.com/cascadeorienteering/" target="_blank"><button class="social-button">Follow us</button></a>
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-4 social social-widget">
+    <div class="col-lg-3 col-md-3 col-sm-3 social social-widget">
       <?php if ( dynamic_sidebar( 'social-6' ) ); ?>
       <a href="<?php echo get_permalink(113); ?>"><button class="social-button">Contact us</button></a>
     </div>
-  </div>
+	  
+	<div class="col-lg-3 col-md-3 col-sm-3 social social-widget">
+      <div class="widget">
+		  <div class="textwidget">
+			  <p><a target="_blank" rel="noopener" href="https://register.cascadeoc.org/donation"><img alt="write-icon" src="/wp-content/uploads/2022/06/charity-donation-hand-love.png" class="alignnone size-full" width="120" height="105"></a></p>
+			<h3>DONATE</h3>
+			<p>Support the club in developing new programs and keeping our events running smoothly. Thank you!</p>
+		  </div>
+		</div> 
+      <a href="https://register.cascadeoc.org/donation"><button class="social-button">Donate</button></a>
+    </div>
 </div> <!-- end social row -->
 
 <?php get_footer(); ?>

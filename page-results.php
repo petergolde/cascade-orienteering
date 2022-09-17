@@ -38,7 +38,7 @@
 		$query = new WP_Query( array(
 
 			'post_type' => 'result',
-			'posts_per_page' => 100,
+			'posts_per_page' => 1000,
 		    //'paged'          => $paged,
 			'meta_key'   => 'event_date_results',
 			'orderby'    => array( 'meta_value_num' => 'DESC', 'post_date' => 'DESC'),
@@ -110,8 +110,8 @@
   			   	
 </div><!-- close table div -->
 
-<p><a href="http://classic.cascadeoc.org/results-list">Results 2009-2016</a></p>
-<p><a href="http://www.old.cascadeoc.org/">Results 2000-2009</a></p>
+<p><a href="http://oldresults.cascadeoc.org">Results 2009-2016</a></p>
+<p><a href="http://old.cascadeoc.org/Results.html">Results 2000-2009</a></p>
 
 
 	</div> <!-- close content LEFT col 12 -->

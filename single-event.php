@@ -33,6 +33,9 @@
 
                 <!-- date -->
                 <h3><?php $date = DateTime::createFromFormat('Ymd', get_field('event_date')); echo $date->format('l, F j');?>
+					<?php if( get_field('until_date') ): ?>
+                       <?php $untildate = DateTime::createFromFormat('Ymd', get_field('until_date')); echo ' thru '; echo $untildate->format('l, F j');?>
+                    <?php endif; ?>
             
                 <!-- Displays the associated map link in the sub-heading -->
                   <?php
@@ -43,7 +46,7 @@
 
                         foreach( $posts as $post ):
                             setup_postdata($post);
-                            echo '@ ';
+                            echo 'at ';
                             echo '<a href="' . get_the_permalink() . '">';
                             echo get_the_title();
                             echo '</a>';

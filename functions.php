@@ -84,8 +84,15 @@ function coc_theme_js() {
 add_action ( 'wp_enqueue_scripts', 'coc_theme_js' );
 
 
-
-
+// added for debugging contact forms
+function debug_cf7_add_error( $items, $result ) {
+    if ( 'mail_failed' == $result['status'] ) {
+        global $phpmailer;
+        $items['errorInfo'] = $phpmailer->ErrorInfo;
+    }
+    return $items;
+}
+add_action( 'wpcf7_ajax_json_echo', 'debug_cf7_add_error', 10, 2 );
 
 
 

@@ -50,6 +50,26 @@
 			<?php endif; ?>
 
 
+			<?php if( get_field('attackpoint_splits_link') ): ?>  
+				
+				<!-- AttackPoint link, from ACF text field -->
+				<p>
+				<?php
+				$key = 'attackpoint_splits_link';
+				$themeta = get_post_meta($post->ID, $key, TRUE);
+				if($themeta == '') {
+				echo 'Check back soon for splits';
+				} //currently useless, but will use once "how to read results" is written"
+				else {
+					echo '<a class="red" href="';
+					echo the_field('attackpoint_splits_link');
+					echo '">AttackPoint';
+					echo '</a>';
+				}
+				?>
+				</p>
+			<?php endif; ?>
+
 
 				<!-- Related season standings AND related team or individual results,
 				as ACF relationship field -->

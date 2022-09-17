@@ -27,6 +27,7 @@
     <?php endwhile; endif; wp_reset_postdata(); ?>
 
     <h4 class="md-mrg-top text-center">ALL SERIES</h4>
+	<p><a href="?p=16927">2021 Mini Winter League</a></p>
     <p><a href="?p=256">Winter League</a></p>
     <p><a href="?p=254">Ultimate Orienteer</a></p>
     <p><a href="?p=255">Wednesday Evening</a></p>

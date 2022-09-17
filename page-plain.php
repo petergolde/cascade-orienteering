@@ -44,8 +44,10 @@
 
                 // sub-heading
                 echo '<div class="md-mrg-top">';
-                echo '<a name="';
-                the_sub_field('block_heading');
+                // echo '<a name="';
+                // the_sub_field('block_heading');
+                echo '<a id="';
+                str_replace(' ', '-', the_sub_field('block_heading'));
                 echo '">';
                 echo '<h3>';
                 the_sub_field('block_heading');

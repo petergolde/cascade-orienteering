@@ -70,6 +70,7 @@
 
                 'post_type' => 'event',
                 'category__in' => $category_id,
+				'posts_per_page' => -1,
                 'meta_key'   => 'event_date',
                 'orderby'    => 'meta_value_num',
                 'order'      => 'ASC',

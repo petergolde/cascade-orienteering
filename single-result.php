@@ -59,7 +59,8 @@
 
             </h3>
                 <p class="post-info">Posted on: <?php the_time('F j, Y'); ?></p>
-                <p class="post-info">Questions or changes, contact: 
+                <p class="post-info">Questions or changes, contact: <a href="mailto:epunch@cascadeoc.org">epunch@cascadeoc.org</a><br>
+					Epunch Coordinator:
                     <?php
 
                     $posts = get_field('contact_results_person', $post->ID);
@@ -121,6 +122,22 @@
                 ?>
                 </p>
 
+		<!-- Attackpoint link, from ACF text field -->
+                <p>
+                <?php
+                $key = 'attackpoint_splits_link';
+                $themeta = get_post_meta($post->ID, $key, TRUE);
+                if($themeta == '') {
+                echo 'Check back soon for attackpoint';
+                }
+                else {
+                    echo '<a class="red" href="';
+                    echo the_field('attackpoint_splits_link');
+                    echo '">Attackpoint';
+                    echo '</a>';
+                }
+                ?>
+                </p>
 
                 <!-- Related season standings AND related team or individual results,
                 as ACF relationship field -->

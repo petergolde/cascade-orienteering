@@ -10,7 +10,7 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	  <div class="series text-center sm-mrg-top sm-mrg-bottom">
     	<p>
-        <a href="<?php echo get_permalink(256); ?>" class="red">Winter League</a>
+        <a href="<?php echo get_permalink(256); ?>" class="red">Winter League</a> <!--16927-->
       </p>
     	<p> | </p>
     	<p>
@@ -52,16 +52,21 @@
     			'meta_key'   => 'event_date',
     			'orderby'    => 'meta_value_num',
     			'order'      => 'ASC',
-    			'meta_value'	=> date('Ymd'),
-    			'meta_compare'	=> '>=',
-    			'date_query'	=> array(
-    				array(
-    						'key' => 'date',
-    						'value' => date('Ymd'),
-    						'compare' => '>=', //Greater than
-    						'type' => 'DATETIME'
-    					)
-    				),
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'event_date',
+                'value' => date('Ymd'),
+                'compare' => '>=',
+                'type' => 'DATETIME'
+            ),
+            array(
+                'key' => 'until_date',
+                'value' => date('Ymd'),
+                'compare' => '>=',
+                'type' => 'DATETIME'
+            )
+        )
     			) );
     		?>
 
