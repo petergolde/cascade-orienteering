@@ -1,18 +1,22 @@
+<?php
+require(__DIR__.'/Training-Header.class.php');
+?>
+
 <?php get_header(); ?>
 
 <div class ="row"> <!-- row for content LEFT -->
-  <div class="col-lg-9 col-md-9 col-sm-9 more-pad-right no-pad-left"> <!-- col 9 for content LEFT -->
-    <div class="col-lg-12 lg-mrg-bottom no-pad-left"> <!-- inner col 12 for content LEFT -->
+  <div class="col-lg-12" id="no-pad">
     
+    <!-- Create Eric's nav menu -->
+    <?php Erics_Custom_Walker_Menu::create(); ?>
+        
     <div class="page-header lg-mrg-bottom">
-        <h1><?php wp_title(''); ?></h1>
+        <h1>News</h1>
         <hr></hr>
     </div>
 
-
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        
     <article class="post">
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
@@ -34,22 +38,18 @@
 
 
 
-	<?php endwhile; else: ?>
+    <?php endwhile; else: ?>
 
-	    <div class="page-header">
-	      <h1>Oh no!</h1>
-	      <hr></hr>
-	    </div>
-	    <p>We've dropped our compass. This is the page-sidebar-right template.</p>
+        <div class="page-header">
+          <h1>Oh no!</h1>
+          <hr></hr>
+        </div>
+        <p>We've dropped our compass. This is the page-sidebar-right template.</p>
 
-	<?php endif; ?>
-
-
-    </div> <!-- close content LEFT col 12 -->
-  </div> <!-- close content LEFT col 9 -->
+    <?php endif; ?>
 
 
-<?php get_sidebar( 'news' ); ?>
+  </div> <!-- close  col 12 -->
 
 </div> <!-- close content LEFT row -->
 
