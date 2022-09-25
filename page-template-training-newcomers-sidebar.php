@@ -12,6 +12,15 @@ require(__DIR__.'/Training-Header.class.php');
 
 <?php get_header(); ?>
 
+<div class="row">
+    <div class="col-lg-12">
+        <!-- Create Eric's nav menu -->
+        <?php Erics_Custom_Walker_Menu::create(); ?>
+    </div>
+</div>
+
+
+
 <div class ="row"> <!-- row for content LEFT -->
   <div class="col-lg-9 col-md-9 col-sm-9 more-pad-right no-pad-left"> <!-- col 9 for content LEFT -->
     <div class="col-lg-12 lg-mrg-bottom no-pad-left"> <!-- inner col 12 for content LEFT -->
@@ -35,11 +44,8 @@ require(__DIR__.'/Training-Header.class.php');
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <!-- Create Eric's nav menu -->
-    <?php Erics_Custom_Walker_Menu::create(); ?>
-
         <div class="page-header">
-            <h1><?php the_title(); ?></h1>
+            <h1><?php TrainingTemplate::getFixedTitleHack(); ?></h1>
             <hr></hr>
         </div>
 
