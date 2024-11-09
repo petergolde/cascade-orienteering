@@ -20,7 +20,6 @@
 			//28, 29, 30, 31, 32,
 			// excluding Map tags: Central Washington, Seattle, Eastside, North, South 
 			'include'                   => null, 
-			'topic_count_text_callback' => default_topic_count_text,
 			'link'                      => 'view', 
 			'taxonomy'                  => 'post_tag', 
 			'echo'                      => true,
